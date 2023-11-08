@@ -95,3 +95,15 @@ cd inference
 sudo docker build -t falconapp .
 docker run --gpus all -p 8000:8000 -p 8501:8501 falconapp
 ```
+- To run without Docker
+
+```bash
+git clone https://github.com/GouthamVicky/LLM-LongDoc-Summary.git 
+cd inference
+pip install -r requirements.txt
+uvicorn fastapi_app:app --port 8000 & streamlit run streamlit_app.py
+```
+- Navigate to [localhost](http://localhost:8501/)http://localhost:8501/
+
+## ** Sample Demo**
+
