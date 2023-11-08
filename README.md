@@ -105,5 +105,5 @@ uvicorn fastapi_app:app --port 8000 & streamlit run streamlit_app.py
 ```
 - Navigate to [localhost](http://localhost:8501/)http://localhost:8501/
 
-## ** Sample Demo**
+## **Sample Demo**
 
