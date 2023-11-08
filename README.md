@@ -53,8 +53,8 @@ Huggingface Link - [ccdv/arxiv-summarization](https://huggingface.co/datasets/cc
 
 ### Model Card
 
-#### Model Card Link - [GouthamVignesh/falcon-arxiv-long-summary-1B](https://huggingface.co/GouthamVignesh/falcon-arxiv-long-summary-1B)
-###  Model Card Link - [GouthamVignesh/falcon-long-summary-ckpt](https://huggingface.co/GouthamVignesh/falcon-long-summary-ckpt)
+#### Model Card Link - [GouthamVignesh/falcon-arxiv-long-summary-1B](https://huggingface.co/GouthamVignesh/falcon-arxiv-long-summary-1B) (Lora adapter & safetensor)
+####  Model Card Link - [GouthamVignesh/falcon-long-summary-ckpt](https://huggingface.co/GouthamVignesh/falcon-long-summary-ckpt) (checkpoint bin file)
 
 ### Model Description
 Finetuned Falcon-1B model for document summarization task
