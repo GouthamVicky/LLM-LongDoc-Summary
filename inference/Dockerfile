@@ -1,4 +1,4 @@
-# Use a CUDA-enabled base image
+# CUDA-enabled base image
 FROM nvidia/cuda:11.8.0-devel-ubuntu22.04
 
 # Set the working directory in the container
