@@ -9,6 +9,16 @@ import transformers
 import torch
 import re
 
+from sentence_transformers import SentenceTransformer,util
+
+#Download Sentence transformer model
+model = SentenceTransformer('paraphrase-MiniLM-L3-v2')
+
+nltk.download('punkt')
+nltk.download('stopwords')
+
+# Load NLTK stopwords
+stop_words = set(stopwords.words('english'))
 
 app = FastAPI()
 
@@ -40,7 +50,7 @@ def generate_text(prompt_request: PromptRequest):
 
     print("Generating Prompt")
 
-    prompt = generate_prompt(prompt)
+    prompt = generate_prompt(prompt,model)
 
     print("Prompt Generated")
     print(prompt)

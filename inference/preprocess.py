@@ -12,15 +12,7 @@ from nltk.corpus import stopwords
 from nltk.tokenize import sent_tokenize
 from sentence_transformers import SentenceTransformer,util
 
-#Download Sentence transformer model
-model = SentenceTransformer('paraphrase-MiniLM-L3-v2')
 
-nltk.download('punkt')
-nltk.download('stopwords')
-
-
-# Load NLTK stopwords
-stop_words = set(stopwords.words('english'))
 
 def clean_and_tokenize(sentence):
     sentence = re.sub('[^a-zA-Z0-9.]', ' ', sentence)
@@ -29,7 +21,7 @@ def clean_and_tokenize(sentence):
     tokens = [token for token in tokens if token not in stop_words]
     return ' '.join(tokens)
 
-def extractive_summary_generator(input_article_text):
+def extractive_summary_generator(input_article_text,model):
     sentences = sent_tokenize(input_article_text)
     corpus = [clean_and_tokenize(sentence) for sentence in sentences]
 
@@ -62,7 +54,7 @@ def extractive_summary_generator(input_article_text):
         return "\n".join(corpus)
 
 
-def preprocess_text(text):
+def preprocess_text(text,model):
     #Remove special characters and extra whitespace
     text = re.sub(r'[^a-zA-Z0-9.\s]', '', text)
     text = ' '.join(text.split())
@@ -73,7 +65,7 @@ def preprocess_text(text):
     # Remove extra multi-line breaks
     text = re.sub(r'\n\s*\n', '\n\n', text)
 
-    return extractive_summary_generator(text)
+    return extractive_summary_generator(text,model)
 
 
 def remove_pattern_words(text):
@@ -88,9 +80,9 @@ def remove_pattern_words(text):
     return text_without_pattern_words
 
 
-def generate_prompt(article_text):
+def generate_prompt(article_text,model):
 
     formatted_prompt = remove_pattern_words(f"### Please give me a brief summary of this research paper\n" \
-                              f"### Paper : {preprocess_text(str(article_text))}\n\n" \
+                              f"### Paper : {preprocess_text(str(article_text),model)}\n\n" \
                               f"### Summary :")
     return formatted_prompt
