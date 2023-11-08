@@ -40,7 +40,7 @@ Huggingface Link - [ccdv/arxiv-summarization](https://huggingface.co/datasets/cc
 
 ### **Part 2 - Finetuning Model**
 - Download [Falcon Model (1B)](tiiuae/falcon-rw-1b) Model Source - Paper: https://arxiv.org/abs/2306.01116
-- Load the model in 4bit with nf4 Quantization Technique using **Bitsandbytes** Paper - https://arxiv.org/pdf/2305.14314.pdf
+- using **Bitsandbytes** load the model in 4bit with nf4 Quantization Technique  Paper - https://arxiv.org/pdf/2305.14314.pdf
 - Import PEFT and pass the Lora config to finetune the Falcon model with the generated prompt
 - Finetune the model and save the adapter/checkpoint to the huggingface hub
 - Merge the LORA adapter and push the model to huggingface hub
