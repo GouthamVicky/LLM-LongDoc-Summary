@@ -73,7 +73,17 @@ Finetuned Falcon-1B model for document summarization task
 - Interpret the Results.
 
 ## **Part 3 - Inference Comparision**
-- Inference comparison between huggingface generation pipeline and VLLM Inference
+- Inference comparison between hugging face generation pipeline and VLLM Inference
+- Inference Google Colab Notebook Link
+  
+| Metric                          | Hugging Face Pipeline | VLM Pipeline     |
+|---------------------------------|-----------------------|----------------- |
+| Total Time Taken                | 10.04 seconds         | 15.21 seconds    |
+| Tokens Generated                | 324                   | 1024             |
+| Tokens Generated Per Second     | 32.26 tokens/second   | 67.34 tokens/second|
+| GPU Memory Usage (MB)           | 4587                  | 33140 MB         |
+
+### Inference Comparion chart - 
   ![download](https://github.com/GouthamVicky/LLM-LongDoc-Summary/assets/65328702/d3c2a661-7b80-46fb-b2ab-68080d530cd8)
 
 ## **Part 4 - Streamlit Model Deployment**
