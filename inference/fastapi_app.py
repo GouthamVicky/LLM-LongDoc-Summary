@@ -9,7 +9,7 @@ import uvicorn
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import transformers
 import torch
-
+import re
 
 
 app = FastAPI()
@@ -49,7 +49,7 @@ def generate_text(prompt_request: PromptRequest):
     #generated_text = llm.generate([prompt], sampling_params)[0].outputs[0].text
     results = " ".join([f"{seq['generated_text']}" for seq in pipeline(prompt, max_length=1024, do_sample=True, top_k=10, num_return_sequences=1, eos_token_id=tokenizer.eos_token_id)])
     generated_text=results.split("### Summary :")[-1]
-    generated_text=generated_text.strip()
+    generated_text = re.sub(r'\n+', '\n', generated_text)
     return {"prompt": prompt, "generated_text": generated_text}
 
 if __name__ == "__main__":
