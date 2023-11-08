@@ -1,8 +1,6 @@
 from fastapi import FastAPI,Response
 from pydantic import BaseModel
 from typing import List
-from vllm import LLM, SamplingParams
-
 from preprocess import generate_prompt
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
