@@ -52,7 +52,7 @@ def generate_text(prompt_request: PromptRequest):
 
     print("Generating Prompt")
 
-    prompt = generate_prompt(prompt,model)
+    prompt = generate_prompt(prompt,model,stop_words)
 
     print("Prompt Generated")
     print(prompt)

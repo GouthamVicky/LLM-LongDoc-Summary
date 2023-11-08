@@ -14,16 +14,16 @@ from sentence_transformers import SentenceTransformer,util
 
 
 
-def clean_and_tokenize(sentence):
+def clean_and_tokenize(sentence,stop_words):
     sentence = re.sub('[^a-zA-Z0-9.]', ' ', sentence)
     sentence = sentence.lower()
     tokens = sentence.split()
     tokens = [token for token in tokens if token not in stop_words]
     return ' '.join(tokens)
 
-def extractive_summary_generator(input_article_text,model):
+def extractive_summary_generator(input_article_text,model,stop_words):
     sentences = sent_tokenize(input_article_text)
-    corpus = [clean_and_tokenize(sentence) for sentence in sentences]
+    corpus = [clean_and_tokenize(sentence,stop_words) for sentence in sentences]
 
     # Encode sentences using Sentence Transformers
     sentence_embeddings = model.encode(corpus)
@@ -54,7 +54,7 @@ def extractive_summary_generator(input_article_text,model):
         return "\n".join(corpus)
 
 
-def preprocess_text(text,model):
+def preprocess_text(text,model,stop_words):
     #Remove special characters and extra whitespace
     text = re.sub(r'[^a-zA-Z0-9.\s]', '', text)
     text = ' '.join(text.split())
@@ -80,7 +80,7 @@ def remove_pattern_words(text):
     return text_without_pattern_words
 
 
-def generate_prompt(article_text,model):
+def generate_prompt(article_text,model,stop_words):
 
     formatted_prompt = remove_pattern_words(f"### Please give me a brief summary of this research paper\n" \
                               f"### Paper : {preprocess_text(str(article_text),model)}\n\n" \
