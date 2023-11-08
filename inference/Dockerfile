@@ -22,7 +22,6 @@ COPY requirements.txt /app/requirements.txt
 
 # Install Python dependencies from requirements.txt
 RUN pip install -r /app/requirements.txt
-RUN pip install -q -U git+https://github.com/huggingface/peft.git
 # Expose the FastAPI and Streamlit ports
 EXPOSE 8000
 EXPOSE 8501
