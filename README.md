@@ -49,7 +49,7 @@ Huggingface Link - [ccdv/arxiv-summarization](https://huggingface.co/datasets/cc
 
 ![train_loss](https://github.com/GouthamVicky/LLM-LongDoc-Summary/assets/65328702/d96c87d5-f41b-4deb-b5c6-bbf81d902a24)
 
-### Finetuning Notebook - [Link](https://github.com/GouthamVicky/LLM-LongDoc-Summary/blob/main/Training%20Notebook/Quantiphi_Assignment.ipynb)
+### Finetuning Notebook - [Link](https://github.com/GouthamVicky/LLM-LongDoc-Summary/blob/main/Training%20Notebook/finetuning_falcon.ipynb)
 
 ### Model Card
 
