@@ -56,10 +56,8 @@ Huggingface Link - [ccdv/arxiv-summarization](https://huggingface.co/datasets/cc
 #### Model Card Link - [GouthamVignesh/falcon-arxiv-long-summary-1B](https://huggingface.co/GouthamVignesh/falcon-arxiv-long-summary-1B)
 ###  Model Card Link - [GouthamVignesh/falcon-long-summary-ckpt](https://huggingface.co/GouthamVignesh/falcon-long-summary-ckpt)
 
-Performs sentence classification to determine whether a given sentence is a contribution sentence or not from the research paper
-
 ### Model Description
-
+Finetuned Falcon-1B model for document summarization task
 
 - **Model type:** CasualLM
 - **Language(s) (NLP):** EN
@@ -77,3 +75,6 @@ Performs sentence classification to determine whether a given sentence is a cont
 ## **Part 3 - Inference Comparision**
 - Inference comparison between huggingface generation pipeline and VLLM Inference
   ![download](https://github.com/GouthamVicky/LLM-LongDoc-Summary/assets/65328702/d3c2a661-7b80-46fb-b2ab-68080d530cd8)
+
+## **Part 4 - Streamlit Model Deployment**
+- Build a docker Image to run the streamlit application 
