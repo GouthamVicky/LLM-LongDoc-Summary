@@ -8,7 +8,9 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 import transformers
 import torch
 import re
-
+import nltk
+from nltk.corpus import stopwords
+from nltk.tokenize import sent_tokenize
 from sentence_transformers import SentenceTransformer,util
 
 #Download Sentence transformer model
