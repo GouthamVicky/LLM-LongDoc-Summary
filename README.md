@@ -77,4 +77,11 @@ Finetuned Falcon-1B model for document summarization task
   ![download](https://github.com/GouthamVicky/LLM-LongDoc-Summary/assets/65328702/d3c2a661-7b80-46fb-b2ab-68080d530cd8)
 
 ## **Part 4 - Streamlit Model Deployment**
-- Build a docker Image to run the streamlit application 
+- Build and run the docker Image to run the streamlit application
+
+```bash
+git clone https://github.com/GouthamVicky/ResearchPaperSummarization  # clone
+cd inference
+sudo docker build -t falconapp .
+docker run --gpus all -p 8000:8000 -p 8501:8501 falconapp
+```
