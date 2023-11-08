@@ -107,3 +107,7 @@ uvicorn fastapi_app:app --port 8000 & streamlit run streamlit_app.py
 
 ## **Sample Demo**
 
+
+
+https://github.com/GouthamVicky/LLM-LongDoc-Summary/assets/65328702/911ad609-0a0d-4b67-b502-4a095561ffd8
+
