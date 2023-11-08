@@ -65,7 +65,7 @@ def preprocess_text(text,model,stop_words):
     # Remove extra multi-line breaks
     text = re.sub(r'\n\s*\n', '\n\n', text)
 
-    return extractive_summary_generator(text,model)
+    return extractive_summary_generator(text,model,stop_words)
 
 
 def remove_pattern_words(text):
@@ -83,6 +83,6 @@ def remove_pattern_words(text):
 def generate_prompt(article_text,model,stop_words):
 
     formatted_prompt = remove_pattern_words(f"### Please give me a brief summary of this research paper\n" \
-                              f"### Paper : {preprocess_text(str(article_text),model)}\n\n" \
+                              f"### Paper : {preprocess_text(str(article_text),model,stop_words)}\n\n" \
                               f"### Summary :")
     return formatted_prompt
