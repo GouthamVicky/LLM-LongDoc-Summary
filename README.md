@@ -4,15 +4,20 @@
 
 Develop a customized LLM model that can generate a summary of a given document.
 
+## Proposed Solution 
+
+- Preprocess the article's context
+- Generate an extractive summary using sentence-transformer
+- Generate a prompt dataset
+- Fine-tune the [Falcon Model (1B)](tiiuae/falcon-rw-1b)
+- Evaluate the Model output
+- Serve the finetuned LLM model using [VLLM](https://github.com/vllm-project/vllm)
+- Containerize the inference pipeline and deploy the API’s endpoint with [Streamlit](https://streamlit.io/) integrated UI
+
 ## Arxiv dataset for summarization
 
 Dataset for summarization of long documents.\
-Adapted from this [repo](https://github.com/armancohan/long-summarization).\
-Note that original data are pre-tokenized so this dataset returns " ".join(text) and add "\n" for paragraphs. \
-This dataset is compatible with the [`run_summarization.py`](https://github.com/huggingface/transformers/tree/master/examples/pytorch/summarization) script from Transformers if you add this line to the `summarization_name_mapping` variable:
-```python
-"ccdv/arxiv-summarization": ("article", "abstract")
-```
+Huggingface Link - [ccdv/arxiv-summarization](https://huggingface.co/datasets/ccdv/arxiv-summarization)
 
 ### Data Fields
 
