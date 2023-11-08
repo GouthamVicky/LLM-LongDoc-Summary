@@ -80,7 +80,7 @@ Finetuned Falcon-1B model for document summarization task
 - Build and run the docker Image to run the streamlit application
 
 ```bash
-git clone https://github.com/GouthamVicky/ResearchPaperSummarization  # clone
+git clone https://github.com/GouthamVicky/LLM-LongDoc-Summary.git 
 cd inference
 sudo docker build -t falconapp .
 docker run --gpus all -p 8000:8000 -p 8501:8501 falconapp
