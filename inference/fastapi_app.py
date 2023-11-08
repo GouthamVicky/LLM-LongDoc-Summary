@@ -24,11 +24,6 @@ app.add_middleware(
 class PromptRequest(BaseModel):
     prompt: str
 
-# Initialize the LLM model outside of the app route
-sampling_params = SamplingParams(temperature=0.2,max_tokens=1024,top_p=0.1, top_k=10)
-#llm = LLM(model="GouthamVignesh/falcon-long-summary-ckpt", trust_remote_code=True, gpu_memory_utilization=0.80)
-
-
 model = "GouthamVignesh/falcon-arxiv-long-summary-1B"
 
 tokenizer = AutoTokenizer.from_pretrained(model)

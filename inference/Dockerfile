@@ -15,7 +15,7 @@ ENV STREAMLIT_SERVER_ENABLE_CORS=false
 # Copy the FastAPI and Streamlit files into the container
 COPY fastapi_app.py /app/fastapi_app.py
 COPY streamlit_app.py /app/streamlit_app.py
-
+COPY preprocess.py /app/preprocess.py
 # Install Python dependencies for both FastAPI and Streamlit
 COPY requirements.txt /app/requirements.txt
 
