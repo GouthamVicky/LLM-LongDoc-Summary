@@ -1,8 +1,8 @@
-## Research Paper Summarization
+## Long Document Summarization
 
 ## Problem Statement
 
-Develop a customized LLM model that can generate a summary of a given document.
+Develop a customized LLM model that can generate a summary of a given Research document.
 
 ## Proposed Solution 
 
