@@ -115,4 +115,5 @@ https://github.com/GouthamVicky/LLM-LongDoc-Summary/assets/65328702/911ad609-0a0
 ## Future Improvements
 
 - Exclude the extractive summary process from the preprocessing step and fine-tune the model with the Extended context window limit using Rotary Embeddings and Flash attention to improve the handling of longer documents. Reference - https://arxiv.org/pdf/2306.15595.pdf
+- LongLoRA can be used to extend the context length during fine-tuning while maintaining high performance and low complexity. The core idea behind LongLoRA is Shift Short Attention (S2 Attention) which splits the content into smaller parts. S2-Attn introduces token shifting by half of the group size, ensuring smooth information exchange between adjacent groups.Reference - https://github.com/dvlab-research/LongLoRA
 - Finetune the model which has AWQ support to enhance the inference speed of the model on resource-constrained edge platforms Reference - https://github.com/mit-han-lab/llm-awq#awq-model-zoo
