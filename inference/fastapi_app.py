@@ -14,7 +14,7 @@ from nltk.tokenize import sent_tokenize
 from sentence_transformers import SentenceTransformer,util
 
 #Download Sentence transformer model
-model = SentenceTransformer('paraphrase-MiniLM-L3-v2')
+sentence_transformer_model = SentenceTransformer('paraphrase-MiniLM-L3-v2')
 
 nltk.download('punkt')
 nltk.download('stopwords')
@@ -52,7 +52,7 @@ def generate_text(prompt_request: PromptRequest):
 
     print("Generating Prompt")
 
-    prompt = generate_prompt(prompt,model,stop_words)
+    prompt = generate_prompt(prompt,sentence_transformer_model,stop_words)
 
     print("Prompt Generated")
     print(prompt)
